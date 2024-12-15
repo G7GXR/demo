@@ -5,7 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>《守望先锋》--致最热烈的时光</title>
-    <link rel="stylesheet" href="StyleSheet1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #3c3c3c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .hero-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hero-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            width: 200px;
+            transition: transform 0.2s;
+        }
+
+        .hero-card:hover {
+            transform: scale(1.05);
+        }
+
+        #news-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #news-section li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #3c3c3c;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,9 +85,9 @@
         <section id="news-section">
             <h2>最新新闻</h2>
             <ul>
-                <li><a href="https://baike.baidu.com/item/%E5%AE%88%E6%9C%9B%E5%85%88%E9%94%8B/16025868?fr=ge_ala">守望先锋百度百科</a></li>
-                <li><a href="https://www.bilibili.com/video/BV16d4y1R7eT/?spm_id_from=333.999.0.0&vd_source=2acc2df3f310c1befa1af92e16524e26">我的精彩操作（五年前）</a></li>
-                <li><a href="https://www.ali213.net/news/html/2024-12/890681.html">国服即将回归！欢迎回家！！</a></li>
+                <li><a href="#">守望先锋最新更新：新地图介绍</a></li>
+                <li><a href="#">社区活动：守望先锋玩家见面会</a></li>
+                <li><a href="#">游戏技巧：如何提高你的胜率</a></li>
             </ul>
         </section>
     </main>
@@ -35,9 +96,53 @@
         <p>&copy; 2024 守望先锋</p>
     </footer>
 
-    <script src="Sript1.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroes = [
+                {name: '士兵76', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/a/a9/Soldier_76.png'},
+                {name: '法老之鹰', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/7/7d/Pharah.png'},
+                {name: '猎空', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/f/fb/Tracer.png'},
+                {name: '黑百合', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/c/cc/Widowmaker.png'},
+                {name: '半藏', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/e/ec/Hanzo.png'},
+                {name: '麦克雷', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/b/bb/M McCree.png'},
+                {name: '回声', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/51/Echo.png'},
+                {name: '索杰恩', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/3/3e/Sojourn.png'},
+                {name: '源氏', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/3/30/Genji.png'},
+                {name: '卡西迪', role: '支援', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/18/Baptiste.png'},
+                {name: '死神', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/7/74/Reaper.png'},
+                {name: '艾什', role: '突击', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/5a/Ash.png'},
+                {name: '巴蒂斯特', role: '支援', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/18/Baptiste.png'},
+                {name: '天使', role: '支援', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/57/Angel.png'},
+                {name: '禅雅塔', role: '支援', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/d/db/Zenyatta.png'},
+                {name: '安娜', role: '支援', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/8/84/Ana.png'},
+                {name: '布里吉塔', role: '支援', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/4/4e/Brigitte.png'},
+                {name: '莫伊拉', role: '支援', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/7/71/Moira.png'},
+                {name: '卢西奥', role: '支援', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/8/84/Lúcio.png'},
+                {name: 'D.Va', role: '坦克', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/9/9a/DVa.png'},
+                {name: '温斯顿', role: '坦克', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/8/88/Winston.png'},
+                {name: '莱因哈特', role: '坦克', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/9/93/Reinhardt.png'},
+                {name: '奥丽莎', role: '坦克', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/3/3a/Orisa.png'},
+                {name: '渣客镇女王', role: '坦克', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/8/84/Junkrat.png'},
+                {name: '西格玛', role: '坦克', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/5d/Sigma.png'},
+                {name: '破坏球', role: '坦克', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/8/84/Junkrat.png'},
+                {name: '路霸', role: '坦克', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/8/8f/Roadhog.png'},
+                {name: '托比昂', role: '坦克', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/54/Torbjörn.png'},
+                {name: '美', role: '支援', image: 'https://static.wikia.nocookie.net/overwatch_gamepedia/images/7/78/Mei.png'}
+            ];
+
+            const heroSection = document.querySelector('.hero-cards');
+
+            heroes.forEach(hero => {
+                const card = document.createElement('div');
+                card.className = 'hero-card';
+                card.innerHTML = `
+                    <img src="${hero.image}" alt="${hero.name}" style="width:100%;">
+                    <h3>${hero.name}</h3>
+                    <p>角色类型: ${hero.role}</p>
+                `;
+                heroSection.appendChild(card);
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-S
