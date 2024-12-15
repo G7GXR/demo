@@ -1,35 +1,34 @@
-// JavaScript source code
 document.addEventListener('DOMContentLoaded', function () {
     const heroes = [
-        { name: 'Ê¿±ø76', role: 'Í»»÷', image: 'https://example.com/soldier76.jpg' },
-        { name: '·¨ÀÏÖ®Ó¥', role: 'Í»»÷', image: 'https://example.com/pharah.jpg' },
-        { name: 'ÁÔ¿Õ', role: 'Í»»÷', image: 'https://example.com/tracer.jpg' },
-        { name: 'ºÚ°ÙºÏ', role: 'Í»»÷', image: 'https://example.com/widowmaker.jpg' },
-        { name: '°ë²Ø', role: 'Í»»÷', image: 'https://example.com/hanzo.jpg' },
-        { name: 'Âó¿ËÀ×', role: 'Í»»÷', image: 'https://example.com/mccree.jpg' },
-        { name: '»ØÉù', role: 'Í»»÷', image: 'https://example.com/echo.jpg' },
-        { name: 'Ë÷½Ü¶÷', role: 'Í»»÷', image: 'https://example.com/sojourn.jpg' },
-        { name: 'Ô´ÊÏ', role: 'Í»»÷', image: 'https://example.com/genji.jpg' },
-        { name: '¿¨Î÷µÏ', role: 'Í»»÷', image: 'https://example.com/baptiste.jpg' },
-        { name: 'ËÀÉñ', role: 'Í»»÷', image: 'https://example.com/reaper.jpg' },
-        { name: '°¬Ê²', role: 'Í»»÷', image: 'https://example.com/ash.jpg' },
-        { name: '°ÍµÙË¹ÌØ', role: 'Ö§Ô®', image: 'https://example.com/baptiste.jpg' },
-        { name: 'ÌìÊ¹', role: 'Ö§Ô®', image: 'https://example.com/angel.jpg' },
-        { name: 'ìøÑÅËş', role: 'Ö§Ô®', image: 'https://example.com/zenyatta.jpg' },
-        { name: '°²ÄÈ', role: 'Ö§Ô®', image: 'https://example.com/ana.jpg' },
-        { name: '²¼Àï¼ªËş', role: 'Ö§Ô®', image: 'https://example.com/brigitte.jpg' },
-        { name: 'ÄªÒÁÀ­', role: 'Ö§Ô®', image: 'https://example.com/moira.jpg' },
-        { name: 'Â¬Î÷°Â', role: 'Ö§Ô®', image: 'https://example.com/lucio.jpg' },
-        { name: 'D.Va', role: 'Ì¹¿Ë', image: 'https://example.com/dva.jpg' },
-        { name: 'ÎÂË¹¶Ù', role: 'Ì¹¿Ë', image: 'https://example.com/winston.jpg' },
-        { name: 'À³Òò¹şÌØ', role: 'Ì¹¿Ë', image: 'https://example.com/reinhardt.jpg' },
-        { name: '°ÂÀöÉ¯', role: 'Ì¹¿Ë', image: 'https://example.com/orisa.jpg' },
-        { name: 'Ôü¿ÍÕòÅ®Íõ', role: 'Ì¹¿Ë', image: 'https://example.com/junkqueen.jpg' },
-        { name: 'Î÷¸ñÂê', role: 'Ì¹¿Ë', image: 'https://example.com/sigma.jpg' },
-        { name: 'ÆÆ»µÇò', role: 'Ì¹¿Ë', image: 'https://example.com/junkrat.jpg' },
-        { name: 'Â·°Ô', role: 'Ì¹¿Ë', image: 'https://example.com/roadhog.jpg' },
-        { name: 'ÍĞ±È°º', role: 'Ì¹¿Ë', image: 'https://example.com/torbjorn.jpg' },
-        { name: 'ÃÀ', role: 'Ö§Ô®', image: 'https://example.com/mei.jpg' }
+        { name: 'å£«å…µ76', role: 'çªå‡»', image: 'https://example.com/soldier76.jpg' },
+        { name: 'æ³•è€ä¹‹é¹°', role: 'çªå‡»', image: 'https://example.com/pharah.jpg' },
+        { name: 'çŒç©º', role: 'çªå‡»', image: 'https://example.com/tracer.jpg' },
+        { name: 'é»‘ç™¾åˆ', role: 'çªå‡»', image: 'https://example.com/widowmaker.jpg' },
+        { name: 'åŠè—', role: 'çªå‡»', image: 'https://example.com/hanzo.jpg' },
+        { name: 'éº¦å…‹é›·', role: 'çªå‡»', image: 'https://example.com/mccree.jpg' },
+        { name: 'å›å£°', role: 'çªå‡»', image: 'https://example.com/echo.jpg' },
+        { name: 'ç´¢æ°æ©', role: 'çªå‡»', image: 'https://example.com/sojourn.jpg' },
+        { name: 'æºæ°', role: 'çªå‡»', image: 'https://example.com/genji.jpg' },
+        { name: 'å¡è¥¿è¿ª', role: 'çªå‡»', image: 'https://example.com/baptiste.jpg' },
+        { name: 'æ­»ç¥', role: 'çªå‡»', image: 'https://example.com/reaper.jpg' },
+        { name: 'è‰¾ä»€', role: 'çªå‡»', image: 'https://example.com/ash.jpg' },
+        { name: 'å·´è’‚æ–¯ç‰¹', role: 'æ”¯æ´', image: 'https://example.com/baptiste.jpg' },
+        { name: 'å¤©ä½¿', role: 'æ”¯æ´', image: 'https://example.com/angel.jpg' },
+        { name: 'ç¦…é›…å¡”', role: 'æ”¯æ´', image: 'https://example.com/zenyatta.jpg' },
+        { name: 'å®‰å¨œ', role: 'æ”¯æ´', image: 'https://example.com/ana.jpg' },
+        { name: 'å¸ƒé‡Œå‰å¡”', role: 'æ”¯æ´', image: 'https://example.com/brigitte.jpg' },
+        { name: 'è«ä¼Šæ‹‰', role: 'æ”¯æ´', image: 'https://example.com/moira.jpg' },
+        { name: 'å¢è¥¿å¥¥', role: 'æ”¯æ´', image: 'https://example.com/lucio.jpg' },
+        { name: 'D.Va', role: 'å¦å…‹', image: 'https://example.com/dva.jpg' },
+        { name: 'æ¸©æ–¯é¡¿', role: 'å¦å…‹', image: 'https://example.com/winston.jpg' },
+        { name: 'è±å› å“ˆç‰¹', role: 'å¦å…‹', image: 'https://example.com/reinhardt.jpg' },
+        { name: 'å¥¥ä¸½è', role: 'å¦å…‹', image: 'https://example.com/orisa.jpg' },
+        { name: 'æ¸£å®¢é•‡å¥³ç‹', role: 'å¦å…‹', image: 'https://example.com/junkqueen.jpg' },
+        { name: 'è¥¿æ ¼ç›', role: 'å¦å…‹', image: 'https://example.com/sigma.jpg' },
+        { name: 'ç ´åçƒ', role: 'å¦å…‹', image: 'https://example.com/junkrat.jpg' },
+        { name: 'è·¯éœ¸', role: 'å¦å…‹', image: 'https://example.com/roadhog.jpg' },
+        { name: 'æ‰˜æ¯”æ˜‚', role: 'å¦å…‹', image: 'https://example.com/torbjorn.jpg' },
+        { name: 'ç¾', role: 'æ”¯æ´', image: 'https://example.com/mei.jpg' }
     ];
 
     const heroSection = document.querySelector('.hero-cards');
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         card.innerHTML = `
 <img src="${hero.image}" alt="${hero.name}" style="width:100%;">
 <h3>${hero.name}</h3>
-<p>½ÇÉ«ÀàĞÍ: ${hero.role}</p>
+<p>è§’è‰²ç±»å‹: ${hero.role}</p>
         `;
         heroSection.appendChild(card);
     });
